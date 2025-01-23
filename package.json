@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "curso-ada-react": "file:",
     "readline-sync": "^1.4.10"
   }
 }
