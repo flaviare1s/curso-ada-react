@@ -23,11 +23,3 @@ console.clear();
 setTimeout(() => {
   console.log('Depois de 2 segundos...');
 }, 2000)
-
-console.clear();
-
-// ---------------------------------------------------------------
-
-// * 2. Promises
-
-
