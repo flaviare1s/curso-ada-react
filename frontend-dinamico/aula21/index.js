@@ -39,17 +39,40 @@ input.addEventListener('input', () => {
 diminuirBtn.classList.add('btn');
 aumentarBtn.classList.add('btn');
 
+// Mudar Tema
+
 const themeButton = document.querySelector('#theme');
-let darkTheme = false;
+let darkTheme;
+
+// Definindo uma função que será executada ao carregar a página
+window.onload = () => {
+  const isDarkThemeStorage = localStorage.getItem('isDarkTheme');
+
+  darkTheme = isDarkThemeStorage === 'true';
+
+   if (darkTheme) {
+     document.body.style.backgroundColor = 'black';
+     title.style.color = 'white';
+     contador.style.color = 'white';
+   } else {
+     document.body.style.backgroundColor = 'white';
+     title.style.color = 'black';
+     contador.style.color = 'black';
+   }
+};
 
 themeButton.addEventListener('click', () => {
   darkTheme = !darkTheme;
 
+  localStorage.setItem('isDarkTheme', darkTheme);
+
   if (darkTheme) {
     document.body.style.backgroundColor = 'black';
     title.style.color = 'white';
+    contador.style.color = 'white';
   } else {
     document.body.style.backgroundColor = 'white';
     title.style.color = 'black';
+    contador.style.color = 'black';
   }
 })
